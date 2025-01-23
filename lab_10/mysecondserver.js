@@ -1,6 +1,6 @@
 
 var http = require('http');
-var currentdate = require('/mymodule');
+var currentdate = require('./mymodule');
 
 http.createServer(function (req, res) {
 
