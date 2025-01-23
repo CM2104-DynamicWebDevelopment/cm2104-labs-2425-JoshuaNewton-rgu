@@ -1,3 +1,3 @@
-exports.myDateTime= funcion() {
+exports.myDateTime = funcion(){
     return Date();
 };
