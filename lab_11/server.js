@@ -29,16 +29,16 @@ app.get('/calc' , function (req, res) {
     var y = req.query.y;
     var op = req.query.op;
     if (op == "add") {
-        res.send(parseInt(x) + parseInt(y));
+        res.send("ADD " +parseInt(x) + parseInt(y));
     }
     else if (op == "sub") {
-        res.send(parseInt(x) - parseInt(y));
+        res.send("MINUS " + parseInt(x) - parseInt(y));
     }
     else if (op == "mul") {
-        res.send(parseInt(x) * parseInt(y));
+        res.send("Times " +parseInt(x) * parseInt(y));
     }
     else if (op == "div") {
-        res.send(parseInt(x) / parseInt(y));
+        res.send("Divide " +parseInt(x) / parseInt(y));
     }
 });
 
