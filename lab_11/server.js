@@ -24,7 +24,7 @@ res.send("x + y = " + (parseInt(x) + parseInt(y)));
 });
 
 
-app.get('calc' , function (req, res) {
+app.get('/calc' , function (req, res) {
     var x = req.query.x;
     var y = req.query.y;
     var op = req.query.op;
