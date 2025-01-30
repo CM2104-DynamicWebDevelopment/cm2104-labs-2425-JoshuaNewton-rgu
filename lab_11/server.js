@@ -28,20 +28,18 @@ app.get('/calc' , function (req, res) {
     var x = req.query.x;
     var y = req.query.y;
     var op = req.query.op;
-    var result = 0;
     if (op == "add") {
-        result = parseInt(x) + parseInt(y);
+        res.send = parseInt(x) + parseInt(y);
     }
     else if (op == "sub") {
-        result = parseInt(x) - parseInt(y);
+        res.send = parseInt(x) - parseInt(y);
     }
     else if (op == "mul") {
-        result = parseInt(x) * parseInt(y);
+        res.send = parseInt(x) * parseInt(y);
     }
     else if (op == "div") {
-        result = parseInt(x) / parseInt(y);
+        res.send = parseInt(x) / parseInt(y);
     }
-    res.send("Result = " + result);
 });
 
 app.listen(8080);
