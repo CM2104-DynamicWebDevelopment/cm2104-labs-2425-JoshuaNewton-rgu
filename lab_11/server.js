@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+
 var Jokes = require('knock-knock-jokes');
 
 
@@ -16,6 +17,10 @@ app.get('/joke' , function (req, res) {
     res.end(randomjoke);
 });
 
-
+app.get('/add' , function (req, res) {
+var x = req.query.x;
+var y = req.query.y;
+res.send("x + y = " + (parseInt(x) + parseInt(y)));
+});
 
 app.listen(8080);
