@@ -12,7 +12,7 @@ app.get('/getform', function (req, res) {
     res.send("Hi " + name + " I am sure you will " + quest);
 });
 
-app.get('/postform', function (req, res) {
+app.post('/postform', function (req, res) {
     var name = req.body.name;
     var quest = req.body.quest;
     res.send("Hi " + name + " I am sure you will " + quest);
