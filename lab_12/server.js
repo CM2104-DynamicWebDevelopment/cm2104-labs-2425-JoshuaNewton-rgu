@@ -29,7 +29,7 @@ spotifyApi.clientCredentialsGrant().then(
 );
 
 async function getTracks(searchterm, res){
-    spotifyApi.searchTracks(searchterm, res)
+    spotifyApi.searchTracks(searchterm)
     .then(function(data){
     var tracks = data.body.tracks.items;
     var HTMLResonse = "";
