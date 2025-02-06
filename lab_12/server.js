@@ -10,7 +10,7 @@ var spotifyApi = new SpotifyWebApi({
 });
 
 
-spotifyApi.searchTracks(searchterm)
+spotifyApi.searchTracks(searchterm, res)
     .then(function(data){
     var tracks = data.body.tracks.items;
     var HTMLResonse = "";
