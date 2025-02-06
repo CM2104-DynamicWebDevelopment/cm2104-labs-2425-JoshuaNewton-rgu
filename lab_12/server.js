@@ -6,7 +6,7 @@ app.use(express.static("public"));
 
 var spotifyApi = new SpotifyWebApi({
     clientID: "1ff8f943ebfc4f09b8cbcc0f1b39a0ec" ,
-    ClientSecret: "6e45c1307fe947228ff310e85c56f28f"
+    clientSecret: "6e45c1307fe947228ff310e85c56f28f"
 
 });
 
