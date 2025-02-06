@@ -10,23 +10,7 @@ var spotifyApi = new SpotifyWebApi({
 });
 
 
-spotifyApi.searchTracks(searchterm, res)
-    .then(function(data){
-    var tracks = data.body.tracks.items;
-    var HTMLResonse = "";
-    for(var i = 0; i < tracks.length; i++){
-        var track = tracks[i];
-        console.log(track.name);
 
-        HTMLResonse=HTMLResonse + "<div>"+"<h2>"+track.name+"</h2>"+"<h4>"+track.artists[0].name+"</h4>"+"<img src="+track.album.images[0].url+">"+"</div>";
-        console.log(HTMLResonse);
-    }
-    res.send(HTMLResonse);
-    },
-    function(err){
-        console.error(err);
-    }
-);
 
 //Retrieving an access token
 spotifyApi.clientCredentialsGrant().then(
@@ -45,11 +29,23 @@ spotifyApi.clientCredentialsGrant().then(
 );
 
 async function getTracks(searchterm, res){
-    spotifyApi.searchTracks(searchterm).then(function(data){
-        res.send(JSON.stringify(data.body));
-    }, function(err){
+    spotifyApi.searchTracks(searchterm, res)
+    .then(function(data){
+    var tracks = data.body.tracks.items;
+    var HTMLResonse = "";
+    for(var i = 0; i < tracks.length; i++){
+        var track = tracks[i];
+        console.log(track.name);
+
+        HTMLResonse=HTMLResonse + "<div>"+"<h2>"+track.name+"</h2>"+"<h4>"+track.artists[0].name+"</h4>"+"<img src="+track.album.images[0].url+">"+"</div>";
+        console.log(HTMLResonse);
+    }
+    res.send(HTMLResonse);
+    },
+    function(err){
         console.error(err);
-    });
+    }
+);
 }
 
 app.get("/searchLove",function(req, res){
