@@ -55,7 +55,7 @@ app.get("/searchLove",function(req, res){
 
 app.get('/search', function(req,res){
     var searchterm = req.body.searchterm;
-    getTracks(searchterm,res);
+    res.send("You searched for " + searchterm);
 });
 
 
