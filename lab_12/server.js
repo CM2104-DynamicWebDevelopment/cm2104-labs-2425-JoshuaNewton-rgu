@@ -5,8 +5,8 @@ var spotifyWebApi = require("spotify-web-api-node");
 app.use(express.static("public"));
 
 var spotifyApi = new SpotifyWebApi({
-    clientID: "1ff8f943ebfc4f09b8cbcc0f1b39a0ec" ,
-    clientSecret: "6e45c1307fe947228ff310e85c56f28f"
+    clientID: '1ff8f943ebfc4f09b8cbcc0f1b39a0ec' ,
+    clientSecret: '6e45c1307fe947228ff310e85c56f28f'
 
 });
 
@@ -30,7 +30,7 @@ spotifyApi.clientCredentialsGrant().then(
     function(err){
         console.log("Something went wrong when retrieving an access token",err.message);
     }
-)
+);
 
 async function getTracks(searchterm, res){
     spotifyApi.searchTracks(searchterm).then(function(data){
