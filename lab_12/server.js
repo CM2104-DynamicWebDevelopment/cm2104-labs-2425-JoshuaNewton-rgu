@@ -33,14 +33,19 @@ async function getTracks(searchterm, res){
     });
 }
 
-spotifyApi.searchTracks(searchterm).then(function(data){
+app.get("/searchLove",function(req, res){
+    getTracks("love",res);
+});
+
+spotifyApi.searchTracks(searchterm)
+    .then(function(data){
     var tracks = data.body.tracks.items;
     var HTMLResonse = "";
     for(var i = 0; i < tracks.length; i++){
         var track = tracks[i];
         console.log(track.name);
 
-        HTMLResonse=HTMLResonse + "<div>"+"<h2>"+track.name+"</h2>"+"<h4"+track.artists[0].name+"</h4>"+"<img src="+track.album.images[0].url+">"+"</div>";
+        HTMLResonse=HTMLResonse + "<div>"+"<h2>"+track.name+"</h2>"+"<h4>"+track.artists[0].name+"</h4>"+"<img src="+track.album.images[0].url+">"+"</div>";
         console.log(HTMLResonse);
     }
     res.send(HTMLResonse);
@@ -49,11 +54,5 @@ spotifyApi.searchTracks(searchterm).then(function(data){
         console.error(err);
     }
 );
-
-
-app.get("/searchLove",function(req, res){
-    getTracks("love",res);
-});
-
 
 app.listen(8080);
