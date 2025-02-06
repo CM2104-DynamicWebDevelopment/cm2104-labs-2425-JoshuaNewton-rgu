@@ -4,7 +4,7 @@ app.use(express.static("public"));
 const SpotifyWebApi = require("spotify-web-api-node");
 
 var spotifyApi = new SpotifyWebApi({
-    clientID: '1ff8f943ebfc4f09b8cbcc0f1b39a0ec' ,
+    clientId: '1ff8f943ebfc4f09b8cbcc0f1b39a0ec' ,
     clientSecret: '6e45c1307fe947228ff310e85c56f28f'
 
 });
@@ -36,10 +36,6 @@ async function getTracks(searchterm, res){
 app.get("/searchLove",function(req, res){
     getTracks("love",res);
 });
-
-
-
-
 
 
 app.listen(8080);
