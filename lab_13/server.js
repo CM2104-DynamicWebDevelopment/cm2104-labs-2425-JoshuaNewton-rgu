@@ -7,6 +7,7 @@ const express = require("express");
 const app = express();
 
 app.use(express.static("public"));
+app.use(express.urlencoded({extended: true}));
 var db;
 
 connectDB();
@@ -30,3 +31,11 @@ app.get("/all", function(req , res){
         res.send(output);
     })
 })
+
+app.post("/quotes", function(req, res){
+    db.collection("quotes").insertOne(req.body, function(err, result){
+        if(err) throw err;
+        console.log("saved to database")
+        res.redirect("/");
+    })
+});
