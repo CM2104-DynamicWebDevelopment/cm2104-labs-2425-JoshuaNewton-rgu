@@ -7,11 +7,11 @@ app.set('view engine', 'ejs');
 // use res.render to load up an ejs view file
 // index page
 app.get('/', function(req, res) {
- res.render('Pages/index');
+ res.render('Views/Pages/index');
 });
 // about page
 app.get('/about', function(req, res) {
- res.render('Pages/About');
+ res.render('Views/Pages/About');
 });
 app.listen(8080);
 console.log('8080 is the magic port');
